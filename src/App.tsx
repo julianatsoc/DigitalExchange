@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import bg from "./assets/bg.png";
-import FormCurrencyConverter from "./components/formCurrencyConverter.tsx";
 import DevLinkedin from "./components/DevLinkedin.tsx";
 import { Loader2 } from "lucide-react";
+import FormCurrencyConverter from "./components/FormCurrencyConverter.tsx";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
