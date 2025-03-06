@@ -82,7 +82,7 @@ export default function FormCurrencyConverter() {
       
   
     return (
-      <div className=" flex items-center justify-center p-4">
+      <div className=" flex flex-col items-center justify-center">
   
             <form onSubmit={handleConvert}>
               <div className="space-y-4">
@@ -96,7 +96,7 @@ export default function FormCurrencyConverter() {
                     onChange={(e) => setAmount(e.target.value)}
                     min="0"
                     step="any"
-                    className="block w-full px-3 py-2 bg-white/6 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-0 border border-[#582BB8] rounded-lg text-white"
+                    className="block w-full px-3 py-2 bg-white/6 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-0 border border-[#582BB8] rounded-lg text-white outline-none"
                     required
                   />
                 </div>

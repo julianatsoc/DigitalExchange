@@ -20,7 +20,7 @@ export function ResultDisplay({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-white/6 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-0 border border-[#582BB8] rounded-lg p-6 mt-6 ml-4 w-[300px]"
+      className="bg-white/6 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-0 border border-[#582BB8] rounded-lg p-6 mt-6 w-full"
     >
       <div className="text-center ">
         <p className="text-1xl text-white">
