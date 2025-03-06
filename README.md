@@ -1,54 +1,71 @@
-# React + TypeScript + Vite
+# Digital Exchange 💱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Digital Exchange** is a currency converter app that provides real-time exchange rate information and supports converting currencies based on the latest data from public **CDNs**.
 
-Currently, two official plugins are available:
+[Live Demo](https://digital-exchange.vercel.app/) 🌐
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features ✨
 
-## Expanding the ESLint configuration
+- **Amount to be converted** (numeric input) 💵.
+- **Source Currency** (select fetching data from the CDN: [Currency API - Currencies List](https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.min.json)) 💰.
+- **Destination Currency** (select  fetching data from the CDN: [Currency API - Currencies List](https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.min.json)) 💸.
+- A **Swap** button to invert the selected currencies 🔁.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## CDN Consumption 🌍
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Exchange CDN**: Provides real-time exchange rates for different currencies. You can find the official repository of this API [here](https://github.com/fawazahmed0/exchange-api).
+
+## Design Credits 🎨
+- The background design was created using a template from **Figma**. You can view and use the template [here](https://www.figma.com/community/file/915635011015229682).
+
+## Technologies Used 🛠️:
+
+- **React** ⚛️
+- **Tailwind CSS** 🎨
+
+## Setup 🛠️
+
+## 📥 **Installation**
+
+🔧 **Pre-requisites**
+
+Make sure you have the following software installed:
+
+- [Node.js](https://nodejs.org/) (v18 or higher) 🖥️
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) for package management 🎁
+
+
+**Clone the repository**:
+
+```bash
+git clone https://github.com/julianatsoc/DigitalExchange
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install the dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+cd DigitalExchange
+npm install
 ```
+
+or if you are using yarn
+
+```bash
+yarn install
+```
+
+### ⚙️ Start the development server:
+
+Now, run the development server to start running the project:
+
+```bash
+npm run dev
+
+```
+
+or
+
+```bash
+yarn start
+```
+# Enjoy converting currencies with **Digital Exchange**! 💱🌍
