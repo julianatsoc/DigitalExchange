@@ -7,6 +7,7 @@ import { fetchCurrencies, fetchExchangeRates } from '../services/api.ts';
 
 
 export default function FormCurrencyConverter() {
+    const [conversionTriggered, setConversionTriggered] = useState(false);
     const [currencies, setCurrencies] = useState<Record<string, string>>({});
     const [fromCurrency, setFromCurrency] = useState('USD');
     const [toCurrency, setToCurrency] = useState('EUR');
@@ -33,6 +34,7 @@ export default function FormCurrencyConverter() {
   
     async function handleConvert(e: React.FormEvent) {
       e.preventDefault();
+      setConversionTriggered(true);
       setLoading(true);
       setError('');
       
@@ -153,15 +155,15 @@ export default function FormCurrencyConverter() {
               </div>
             )}
   
-            {conversionResult && !error && (
-              <ResultDisplay
-                fromCurrency={fromCurrency}
-                toCurrency={toCurrency}
-                amount={parseFloat(amount)}
-                convertedAmount={conversionResult.convertedAmount}
-                rate={conversionResult.rate}
-              />
-            )}
+  {conversionTriggered && conversionResult && !error && (
+      <ResultDisplay
+        fromCurrency={fromCurrency}
+        toCurrency={toCurrency}
+        amount={parseFloat(amount)}
+        convertedAmount={conversionResult.convertedAmount}
+        rate={conversionResult.rate}
+      />
+    )}
           </div>
     );
   }
