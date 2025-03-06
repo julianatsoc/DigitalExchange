@@ -3,7 +3,7 @@ import { ArrowUpDown, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { CurrencyInput } from './CurrencyInput.tsx';
 import { ResultDisplay } from './ResultDisplay.tsx';
-import { fetchCurrencies, fetchExchangeRates } from '../services/api';
+import { fetchCurrencies, fetchExchangeRates } from '../services/api.ts';
 
 
 export default function FormCurrencyConverter() {
