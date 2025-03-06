@@ -1,14 +1,15 @@
 import bg from "./assets/bg.png";
+import FormCurrencyConverter from "./components/formCurrencyConverter";
 
 function App() {
   return (
     <>
       <div className="h-screen bg-cover " style={{ backgroundImage: `url(${bg})` }}>
-        <div className="flex items-center justify-center h-full">
-          <div className="text-center">
-            <h1 className="text-3xl font-bold text-white">Hello World</h1>
-            <p className="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
+        <div className="flex flex-col items-center justify-center h-full">
+        <h1 className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-l from-blue-400 via-purple-500 to-blue-300 drop-shadow-lg">
+            Digital Exchange
+          </h1>
+          <FormCurrencyConverter />
         </div>
       </div>      
     </>
