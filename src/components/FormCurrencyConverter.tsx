@@ -16,7 +16,6 @@ export default function FormCurrencyConverter() {
     const [conversionResult, setConversionResult] = useState<{
       convertedAmount: number;
       rate: number;
-      lastUpdate: string;
     } | null>(null);
   
     useEffect(() => {
@@ -45,7 +44,6 @@ export default function FormCurrencyConverter() {
         setConversionResult({
           convertedAmount,
           rate,
-          lastUpdate: data.date,
         });
       } catch (err) {
         setError('Failed to convert currency. Please try again later.');
@@ -74,7 +72,7 @@ export default function FormCurrencyConverter() {
                     onChange={(e) => setAmount(e.target.value)}
                     min="0"
                     step="any"
-                    className="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    className="block w-full px-3 py-2 bg-white/6 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-0 border border-[#582BB8] rounded-lg text-white"
                     required
                   />
                 </div>
@@ -94,9 +92,9 @@ export default function FormCurrencyConverter() {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={handleSwapCurrencies}
-                      className="bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-shado text-[#582bb8]"
+                      className="bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-shado bg-white/6 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-0 border border-[#582BB8] rounded-lg"
                     >
-                      <ArrowUpDown className="h-5 w-5 text-blue-900" />
+                      <ArrowUpDown className="h-5 w-5 text-[#582BB8]" />
                     </motion.button>
                   </div>
                   <div className="mt-10">
@@ -138,7 +136,6 @@ export default function FormCurrencyConverter() {
                 amount={parseFloat(amount)}
                 convertedAmount={conversionResult.convertedAmount}
                 rate={conversionResult.rate}
-                lastUpdate={conversionResult.lastUpdate}
               />
             )}
           </div>

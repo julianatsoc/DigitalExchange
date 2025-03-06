@@ -1,5 +1,6 @@
 import bg from "./assets/bg.png";
 import FormCurrencyConverter from "./components/formCurrencyConverter";
+import DevLinkedin from "./components/DevLinkedin";
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
         <h1 className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-l from-blue-400 via-purple-500 to-blue-300 drop-shadow-lg">
             Digital Exchange
           </h1>
+          <DevLinkedin />
+
           <FormCurrencyConverter />
         </div>
       </div>      

@@ -6,7 +6,6 @@ interface ResultDisplayProps {
   amount: number;
   convertedAmount: number;
   rate: number;
-  lastUpdate: string;
 }
 
 export function ResultDisplay({
@@ -21,17 +20,17 @@ export function ResultDisplay({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className=" bg-white p-6 rounded-lg shadow-lg mt-6 ml-4"
+      className="bg-white/6 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-0 border border-[#582BB8] rounded-lg p-6 mt-6 ml-4 w-[300px]"
     >
       <div className="text-center ">
-        <p className="text-1xl font-bold text-gray-800">
+        <p className="text-1xl text-white">
           {amount.toLocaleString()} {fromCurrency} =
         </p>
-        <p className="text-3xl font-bold text-[#000C49] mt-2">
+        <p className="text-3xl font-bold text-[#582BB8] mt-2">
           {convertedAmount.toLocaleString()} {toCurrency}
         </p>
       </div>
-      <div className="mt-4 text-center font-bold text-sm text-gray-600">
+      <div className="mt-4 text-center text-sm text-gray-600">
         <p>1 {fromCurrency} = {rate.toFixed(6)} {toCurrency}</p>
       </div>
     </motion.div>

@@ -17,10 +17,10 @@ export function CurrencyInput({ value, onChange, currencies, label }: CurrencyIn
         <select
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md appearance-none bg-white"
+          className="block w-full pl-3 pr-10 py-2 text-bold text-white bg-white/6 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-0 border border-[#582BB8] rounded-lg outline-none [&_select]:text-black [&_select]:bg-white appearance-none"
         >
           {Object.entries(currencies).map(([code, name]) => (
-            <option key={code} value={code}>
+            <option key={code} value={code} className="text-white bg-[#0F1B55]">
               {code.toUpperCase()} - {name}
             </option>
           ))}
