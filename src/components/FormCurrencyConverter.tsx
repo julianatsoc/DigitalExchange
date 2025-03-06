@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ArrowUpDown, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { CurrencyInput } from './CurrencyInput.tsx';
-import { ResultDisplay } from './DisplayResults.tsx';
+import { ResultDisplay } from './ResultDisplay.tsx';
 import { fetchCurrencies, fetchExchangeRates } from '../services/api';
 
 
@@ -56,6 +56,30 @@ export default function FormCurrencyConverter() {
       setFromCurrency(toCurrency);
       setToCurrency(fromCurrency);
     }
+    useEffect(() => {
+        async function updateConversion() {
+          if (!amount || isNaN(parseFloat(amount))) return;
+      
+          setLoading(true);
+          setError('');
+      
+          try {
+            const data = await fetchExchangeRates(fromCurrency);
+            const rate = data[fromCurrency.toLowerCase()][toCurrency.toLowerCase()];
+            const convertedAmount = parseFloat(amount) * rate;
+      
+            setConversionResult({ convertedAmount, rate });
+          } catch (err) {
+            setError('Failed to update conversion. Please try again later.');
+            setConversionResult(null);
+          } finally {
+            setLoading(false);
+          }
+        }
+      
+        updateConversion();
+      }, [amount, fromCurrency, toCurrency]);
+      
   
     return (
       <div className=" flex items-center justify-center p-4">
