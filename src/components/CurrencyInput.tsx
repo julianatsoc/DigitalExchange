@@ -9,8 +9,8 @@ interface CurrencyInputProps {
 
 export function CurrencyInput({ value, onChange, currencies, label }: CurrencyInputProps) {
   return (
-    <div className="relative">
-      <label className="block text-sm font-medium text-gray-700 mb-1">
+    <div className="relative mb-4">
+      <label className="block text-sm font-medium bg-clip-text text-transparent bg-gradient-to-l from-blue-400 via-purple-500 to-blue-300 mb-1">
         {label}
       </label>
       <div className="relative">

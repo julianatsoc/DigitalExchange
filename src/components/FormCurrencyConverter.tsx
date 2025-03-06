@@ -65,26 +65,27 @@ export default function FormCurrencyConverter() {
             <form onSubmit={handleConvert}>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Amount
-                  </label>
+                <label className="block text-sm font-medium bg-clip-text text-transparent bg-gradient-to-l from-blue-400 via-purple-500 to-blue-300 mb-1">
+     Amount
+      </label>
                   <input
                     type="number"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                     min="0"
                     step="any"
-                    className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    className="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     required
                   />
                 </div>
   
-                <div className="relative">
+                <div className="relative gap-4">
+                
                   <CurrencyInput
                     value={fromCurrency}
                     onChange={setFromCurrency}
                     currencies={currencies}
-                    label="From"
+                    label='From'
                   />
   
                   <div className="absolute left-1/2 -translate-x-1/2 z-10">
@@ -93,18 +94,17 @@ export default function FormCurrencyConverter() {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={handleSwapCurrencies}
-                      className="bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-shadow"
+                      className="bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-shado text-[#582bb8]"
                     >
-                      <ArrowUpDown className="h-5 w-5 text-blue-600" />
+                      <ArrowUpDown className="h-5 w-5 text-blue-900" />
                     </motion.button>
                   </div>
-  
-                  <div className="mt-4">
+                  <div className="mt-10">
                     <CurrencyInput
                       value={toCurrency}
                       onChange={setToCurrency}
                       currencies={currencies}
-                      label="To"
+                      label='To'
                     />
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function FormCurrencyConverter() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   disabled={loading}
-                  className="w-full mt-6 px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full mt-6 px-4 py-2 border border-transparent rounded-md font-bold shadow-sm text-white bg-[#582bb8]"
                 >
                   {loading ? (
                     <Loader2 className="animate-spin h-5 w-5 mx-auto" />
