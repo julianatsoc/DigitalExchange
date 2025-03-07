@@ -4,6 +4,9 @@
 
 [Live Demo](https://digital-exchange.vercel.app/) 🌐
 
+![Digital Exchange interface](https://repository-images.githubusercontent.com/943879258/6664144b-d2ed-4f17-935d-ac5d8f274bc8)
+
+
 ## Features ✨
 
 - **Amount to be converted** (numeric input) 💵.
